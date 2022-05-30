@@ -36,6 +36,7 @@ import JsxFragment1 from './JsxInReact/JsxFragment1';
 import JsxFragment2 from './JsxInReact/JsxFragment2';
 import PortalEx1 from './portals/PortalEx1';
 import ProfilerEx1 from './Profiler/ProfilerEx1';
+import ForwardRef from './ForwardRef/ForwardRef';
 function App() {
   // const arr = [1, 2, 3, 4, 5, 6, 7, 8, 9]
   const state = {
@@ -104,10 +105,10 @@ function App() {
       <Jsx3/>
       <Jsx4/>
       <JsxFragment1/> */}
-      <Profiler id='profiler' onRender={onRenderCallback}>
+      {/* <Profiler id='profiler' onRender={onRenderCallback}>
       <ProfilerEx1/>
-      
-      </Profiler>
+      </Profiler> */}
+      <ForwardRef/>
     </div>
   )
 }
