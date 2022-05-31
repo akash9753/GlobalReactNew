@@ -9,6 +9,7 @@ const Uncontrolled = () => {
     }
     return (
         <div className='App'>
+            <h1>Uncontrolled Component </h1>
             <form onSubmit={(event)=>submitForm(event)}>
                 <input type="text" ref={inputRef}/><br/>
                 <input type="submit" />

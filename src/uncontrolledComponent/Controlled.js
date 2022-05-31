@@ -9,6 +9,7 @@ const Controlled = () => {
     }
     return (
         <div className='App'>
+            <h1>Controlled Component </h1>
             <form onSubmit={(event)=>submitForm(event)}>
                 <input type="text" onChange={(e)=>setInput(e.target.value)} /><br/>
                 <button>Submit</button>
