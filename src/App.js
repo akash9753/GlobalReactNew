@@ -38,6 +38,8 @@ import PortalEx1 from './portals/PortalEx1';
 import ProfilerEx1 from './Profiler/ProfilerEx1';
 import ForwardRef from './ForwardRef/ForwardRef';
 import RenderProps from './rendr-props/RenderProps';
+import Uncontrolled from './uncontrolledComponent/Uncontrolled';
+import Controlled from './uncontrolledComponent/Controlled';
 function App() {
   // const arr = [1, 2, 3, 4, 5, 6, 7, 8, 9]
   const state = {
@@ -110,7 +112,9 @@ function App() {
       <ProfilerEx1/>
       </Profiler> */}
       {/* <ForwardRef/> */}
-      <RenderProps/>
+      {/* <RenderProps/> */}
+      <Uncontrolled/>
+      <Controlled/>
     </div>
   )
 }
