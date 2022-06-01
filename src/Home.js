@@ -9,6 +9,9 @@ const Home = () => {
         <li>
           <Link to="/proptypesChecking">ProptypesChecking</Link>
         </li>
+        <li>
+          <Link to="/crudapp">CrudApp</Link>
+        </li>
       </ul>
       </div>
     </>

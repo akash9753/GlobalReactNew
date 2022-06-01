@@ -42,6 +42,7 @@ import Uncontrolled from './uncontrolledComponent/Uncontrolled';
 import Controlled from './uncontrolledComponent/Controlled';
 import ProptypesChecking from './proptypes-Checking/ProptypesChecking';
 import Home from './Home';
+import CrudApp from './CrudApp';
 function App() {
   // const arr = [1, 2, 3, 4, 5, 6, 7, 8, 9]
   const state = {
@@ -121,6 +122,7 @@ function App() {
         <Routes>
          <Route path="/" element={<Home />} />
          <Route path="/proptypesChecking" element={<ProptypesChecking  name={"akash"} age={10}/>} />
+         <Route path="/crudapp" element={<CrudApp/>} />
         </Routes>
       </BrowserRouter>
     </div>
