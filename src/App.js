@@ -40,6 +40,8 @@ import ForwardRef from './ForwardRef/ForwardRef';
 import RenderProps from './rendr-props/RenderProps';
 import Uncontrolled from './uncontrolledComponent/Uncontrolled';
 import Controlled from './uncontrolledComponent/Controlled';
+import ProptypesChecking from './proptypes-Checking/ProptypesChecking';
+import Home from './Home';
 function App() {
   // const arr = [1, 2, 3, 4, 5, 6, 7, 8, 9]
   const state = {
@@ -113,8 +115,14 @@ function App() {
       </Profiler> */}
       {/* <ForwardRef/> */}
       {/* <RenderProps/> */}
-      <Uncontrolled/>
-      <Controlled/>
+      {/* <Uncontrolled/>
+      <Controlled/> */}
+      <BrowserRouter>
+        <Routes>
+         <Route path="/" element={<Home />} />
+         <Route path="/proptypesChecking" element={<ProptypesChecking  name={"akash"} age={10}/>} />
+        </Routes>
+      </BrowserRouter>
     </div>
   )
 }
