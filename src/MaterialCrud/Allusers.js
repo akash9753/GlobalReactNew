@@ -6,6 +6,7 @@ import { getUsers, deleteUser } from '../server/Api';
 import {Link} from 'react-router-dom'
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import Navbar from './Navbar';
 
 const StyledTable = styled(Table)`
 width:90%;
@@ -47,6 +48,7 @@ const Allusers = () => {
 
     return (
         <div>
+        <Navbar/>
         <StyledTable>
             <TableHead>
                 <Thead>

@@ -10,7 +10,7 @@ const Home = () => {
           <Link to="/proptypesChecking">ProptypesChecking</Link>
         </li>
         <li>
-          <Link to="/crudapp">CrudApp</Link>
+          <Link to="/homecrud">CrudApp</Link>
         </li>
       </ul>
       </div>

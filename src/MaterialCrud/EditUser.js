@@ -9,7 +9,7 @@ import { useNavigate, useParams } from "react-router-dom";
 
 import { getUser, editUser } from "../server/Api";
 import { useEffect } from "react";
-
+import Navbar from './Navbar';
 // const initialValue = {
 //   fname: "",
 //   lname: "",
@@ -81,6 +81,7 @@ function EditUser() {
 
   return (
     <div className="">
+      <Navbar/>
       <div className="row">
         <div className="col-md-4"></div>
         <div className="col-md-4">
