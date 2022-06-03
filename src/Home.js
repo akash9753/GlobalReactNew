@@ -21,6 +21,9 @@ const Home = () => {
         <li>
           <Link to="/usememo">useMemo Hook</Link>
         </li>
+        <li>
+          <Link to="/usecallback">useCallback Hook</Link>
+        </li>
       </ul>
       </div>
     </>

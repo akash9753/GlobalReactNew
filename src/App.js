@@ -45,6 +45,7 @@ import Home from "./Home";
 import Usestate from "./Hooks/Usestate";
 import Useeffect from "./Hooks/Useeffect";
 import Usememo from "./Hooks/Usememo";
+import Usecallback from "./Hooks/Usecallback";
 function App() {
   useEffect(() => {
     document.title = "Global React";
@@ -147,6 +148,7 @@ function App() {
           <Route path="/usestate" element={<Usestate />} />
           <Route path="/useeffect" element={<Useeffect />} />
           <Route path="/usememo" element={<Usememo />} />
+          <Route path="/usecallback" element={<Usecallback />} />
         </Routes>
         
         <Routes>
