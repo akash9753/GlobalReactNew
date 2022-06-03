@@ -18,6 +18,9 @@ const Home = () => {
         <li>
           <Link to="/useeffect">useEffect Hook</Link>
         </li>
+        <li>
+          <Link to="/usememo">useMemo Hook</Link>
+        </li>
       </ul>
       </div>
     </>

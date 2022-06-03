@@ -44,6 +44,7 @@ import ProptypesChecking from "./proptypes-Checking/ProptypesChecking";
 import Home from "./Home";
 import Usestate from "./Hooks/Usestate";
 import Useeffect from "./Hooks/Useeffect";
+import Usememo from "./Hooks/Usememo";
 function App() {
   useEffect(() => {
     document.title = "Global React";
@@ -145,6 +146,7 @@ function App() {
           />
           <Route path="/usestate" element={<Usestate />} />
           <Route path="/useeffect" element={<Useeffect />} />
+          <Route path="/usememo" element={<Usememo />} />
         </Routes>
         
         <Routes>
