@@ -43,6 +43,7 @@ import Controlled from "./uncontrolledComponent/Controlled";
 import ProptypesChecking from "./proptypes-Checking/ProptypesChecking";
 import Home from "./Home";
 import Usestate from "./Hooks/Usestate";
+import Useeffect from "./Hooks/Useeffect";
 function App() {
   useEffect(() => {
     document.title = "Global React";
@@ -143,6 +144,7 @@ function App() {
             element={<ProptypesChecking name={"akash"} age={10} />}
           />
           <Route path="/usestate" element={<Usestate />} />
+          <Route path="/useeffect" element={<Useeffect />} />
         </Routes>
         
         <Routes>
