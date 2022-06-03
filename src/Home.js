@@ -12,6 +12,9 @@ const Home = () => {
         <li>
           <Link to="/homecrud">CrudApp</Link>
         </li>
+        <li>
+          <Link to="/usestate">useState Hook</Link>
+        </li>
       </ul>
       </div>
     </>
