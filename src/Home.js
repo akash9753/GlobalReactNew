@@ -24,6 +24,9 @@ const Home = () => {
         <li>
           <Link to="/usecallback">useCallback Hook</Link>
         </li>
+        <li>
+          <Link to="/react-table">React Table</Link>
+        </li>
       </ul>
       </div>
     </>

@@ -46,6 +46,7 @@ import Usestate from "./Hooks/Usestate";
 import Useeffect from "./Hooks/Useeffect";
 import Usememo from "./Hooks/Usememo";
 import Usecallback from "./Hooks/Usecallback";
+import ReactTable from "./react-table/ReactTable";
 function App() {
   useEffect(() => {
     document.title = "Global React";
@@ -149,6 +150,7 @@ function App() {
           <Route path="/useeffect" element={<Useeffect />} />
           <Route path="/usememo" element={<Usememo />} />
           <Route path="/usecallback" element={<Usecallback />} />
+          <Route path="/react-table" element={<ReactTable />} />
         </Routes>
         
         <Routes>
