@@ -47,6 +47,9 @@ import Useeffect from "./Hooks/Useeffect";
 import Usememo from "./Hooks/Usememo";
 import Usecallback from "./Hooks/Usecallback";
 import ReactTable from "./react-table/ReactTable";
+import SortingTable from "./react-table/SortingTable";
+import Filtering from "./react-table/Filtering";
+import PaginationTable from "./react-table/PaginitionTable";
 function App() {
   useEffect(() => {
     document.title = "Global React";
@@ -151,6 +154,9 @@ function App() {
           <Route path="/usememo" element={<Usememo />} />
           <Route path="/usecallback" element={<Usecallback />} />
           <Route path="/react-table" element={<ReactTable />} />
+          <Route path="/sort-table" element={<SortingTable />} />
+          <Route path="/filter-table" element={<Filtering />} />PaginationTable
+          <Route path="/pagination-table" element={<PaginationTable />} />
         </Routes>
         
         <Routes>

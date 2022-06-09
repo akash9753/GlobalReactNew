@@ -27,6 +27,15 @@ const Home = () => {
         <li>
           <Link to="/react-table">React Table</Link>
         </li>
+        <li>
+          <Link to="/sort-table">Sort Table</Link>
+        </li>
+        <li>
+          <Link to="/filter-table">Filter Table</Link>
+        </li>
+        <li>
+          <Link to="/pagination-table">Pagination Table</Link>
+        </li>
       </ul>
       </div>
     </>
