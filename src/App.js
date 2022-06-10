@@ -155,21 +155,19 @@ function App() {
           <Route path="/useeffect" element={<Useeffect />} />
           <Route path="/usememo" element={<Usememo />} />
           <Route path="/usecallback" element={<Usecallback />} />
-          <Route path="/react-table" element={<ReactTable />} />
+          `<Route path="/react-table" element={<ReactTable />} />`
           <Route path="/sort-table" element={<SortingTable />} />
           <Route path="/filter-table" element={<Filtering />} />PaginationTable
           <Route path="/pagination-table" element={<PaginationTable />} />
           <Route path="/action-crud" element={<ActionCrud />} />
-        </Routes>
         
-        {/* <Routes>
-          <Route path="/homecrud" element={<HomeCrud />} />
-          <Route path="/allusers" element={<AllUsers />} />
-          <Route path="/adduser" element={<AddUser />} />
-          <Route path="/edituser/:id" element={<EditUser />} />
-          </Routes> */}
+          {/* <Route path="/homecrud" element={<HomeCrud />} />
+          <Route path="/allusers" element={<AllUsers />} /> */}
+          {/* <Route path="/adduser" element={<AddUser />} />
+          <Route path="/edituser/:id" element={<EditUser />} /> */}
+          {/* </Routes>
 
-          <Routes>
+          <Routes> */}
           <Route path="/react-table-home" element={<ReactTableHome />} />
           <Route path="/all-users" element={<ActionCrud />} />
           <Route path="/adduser" element={<AddUser />} />
