@@ -6,7 +6,7 @@ import "./table.css";
 import GlobalFilter from "./GlobalFilter";
 import ColumnFilter from "./ColumnFilter";
 import { FcRight,FcLeft,FcPrevious } from "react-icons/fc";
-const PaginationTable = () => {
+const RowSelection = () => {
   const columns = useMemo(() => COLUMNS, []);
   const data = useMemo(() => MOCK_DATA, []);
 
@@ -70,12 +70,12 @@ const PaginationTable = () => {
                         column.isSortedDesc ? (
                           <>
                             {" "}
-                            <i className="fa-solid fa-square-caret-down"> </i>
+                            <i class="fa-solid fa-square-caret-down"> </i>
                           </>
                         ) : (
                           <>
                             {" "}
-                            <i className="fa-solid fa-square-caret-up"> </i>
+                            <i class="fa-solid fa-square-caret-up"> </i>
                           </>
                         )
                       ) : (
@@ -142,13 +142,13 @@ const PaginationTable = () => {
                 </option>
             ))}  
           </select>
-          <button className="btn btn-light" onClick={() => gotoPage(0)} disabled={!canPreviousPage}>{'<<'}</button>
-          <button className="btn btn-light" onClick={() => previousPage()} disabled={!canPreviousPage}><FcLeft/> Previous</button>
-          <button style={{marginLeft:"8px"}} className="btn btn-light" onClick={() =>nextPage()} disabled={!canNextPage}>Next <FcRight/> </button>
-          <button className="btn btn-light" onClick={() => gotoPage(pageCount-1)} disabled={!canNextPage}>{'>>'}</button>
+          <button class="btn btn-light" onClick={() => gotoPage(0)} disabled={!canPreviousPage}>{'<<'}</button>
+          <button class="btn btn-light" onClick={() => previousPage()} disabled={!canPreviousPage}><FcLeft/> Previous</button>
+          <button style={{marginLeft:"8px"}} class="btn btn-light" onClick={() =>nextPage()} disabled={!canNextPage}>Next <FcRight/> </button>
+          <button class="btn btn-light" onClick={() => gotoPage(pageCount-1)} disabled={!canNextPage}>{'>>'}</button>
       </div>
     </>
   );
 };
 
-export default PaginationTable;
+export default RowSelection;

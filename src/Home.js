@@ -36,6 +36,9 @@ const Home = () => {
         <li>
           <Link to="/pagination-table">Pagination Table</Link>
         </li>
+        <li>
+          <Link to="/action-crud">Action Crud</Link>
+        </li>
       </ul>
       </div>
     </>

@@ -1,21 +1,55 @@
 import React, { useMemo } from "react";
 import { useTable, useGlobalFilter, useFilters, useSortBy, usePagination } from "react-table";
-import MOCK_DATA from "./MOCK_DATA.json";
-import { COLUMNS, GROUPED_COLUMN } from "./Columns";
+import { COLUMNSCrud } from "./ColumnCrudAction";
 import "./table.css";
 import GlobalFilter from "./GlobalFilter";
 import ColumnFilter from "./ColumnFilter";
 import { FcRight,FcLeft,FcPrevious } from "react-icons/fc";
-const PaginationTable = () => {
-  const columns = useMemo(() => COLUMNS, []);
-  const data = useMemo(() => MOCK_DATA, []);
+import { getUsers } from './Api';
+import { useState } from 'react';
+import { useEffect } from 'react';
+import axios from "axios";
 
+const url = "https://nodejsreact1234.herokuapp.com/user/all"
+
+const PaginationTable = () => {
+
+  
+    const [users, setUsers] = useState([])
+
+    // useEffect(()=>{
+    //   const fetchUsers = async () => {
+    //           try{
+    //              const {data} = await axios.get(url)
+    //              setUsers(data.data);
+    //              console.log("data",data.data);
+    //            }catch(error){
+    //               console.log(error);
+    //           }
+    //   }
+    //   fetchUsers();
+    // },[])
+    console.log('users object',users);
+    useEffect(() => {
+        getUserDetails();
+    }, [])
+
+    const getUserDetails = async () => {
+        let response = await getUsers();
+        console.log("getUserDetails",response);
+        setUsers(response.data.data)
+        
+    }
+
+    const columns = useMemo(() => COLUMNSCrud, []);
+    const data = useMemo(() => users, [users]);
+    console.log("Data",data);
   const defaultColumn = useMemo(() =>{
       return{
           Filter: ColumnFilter
       }
-  })
-
+  },[])
+  
   const tableInstance = useTable(
     {
       //  columns: columns,
@@ -142,10 +176,10 @@ const PaginationTable = () => {
                 </option>
             ))}  
           </select>
-          <button className="btn btn-light" onClick={() => gotoPage(0)} disabled={!canPreviousPage}>{'<<'}</button>
-          <button className="btn btn-light" onClick={() => previousPage()} disabled={!canPreviousPage}><FcLeft/> Previous</button>
-          <button style={{marginLeft:"8px"}} className="btn btn-light" onClick={() =>nextPage()} disabled={!canNextPage}>Next <FcRight/> </button>
-          <button className="btn btn-light" onClick={() => gotoPage(pageCount-1)} disabled={!canNextPage}>{'>>'}</button>
+          <button style={{marginLeft:"8px"}} className="btn btn-light" onClick={() => gotoPage(0)} disabled={!canPreviousPage}>{'<<'}</button>
+          <button style={{marginLeft:"8px"}} className="btn btn-light" onClick={() => previousPage()} disabled={!canPreviousPage}><FcLeft/> </button>
+          <button style={{marginLeft:"8px"}} className="btn btn-light" onClick={() =>nextPage()} disabled={!canNextPage}><FcRight/> </button>
+          <button style={{marginLeft:"8px"}} className="btn btn-light" onClick={() => gotoPage(pageCount-1)} disabled={!canNextPage}>{'>>'}</button>
       </div>
     </>
   );

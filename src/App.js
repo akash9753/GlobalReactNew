@@ -46,10 +46,11 @@ import Usestate from "./Hooks/Usestate";
 import Useeffect from "./Hooks/Useeffect";
 import Usememo from "./Hooks/Usememo";
 import Usecallback from "./Hooks/Usecallback";
-import ReactTable from "./react-table/ReactTable";
-import SortingTable from "./react-table/SortingTable";
-import Filtering from "./react-table/Filtering";
-import PaginationTable from "./react-table/PaginitionTable";
+import ReactTable from "./React-table/ReactTable";
+import SortingTable from "./React-table/SortingTable";
+import Filtering from "./React-table/Filtering";
+import PaginationTable from "./React-table/PaginitionTable";
+import ActionCrud from "./React-table/ActionCrud";
 function App() {
   useEffect(() => {
     document.title = "Global React";
@@ -157,6 +158,7 @@ function App() {
           <Route path="/sort-table" element={<SortingTable />} />
           <Route path="/filter-table" element={<Filtering />} />PaginationTable
           <Route path="/pagination-table" element={<PaginationTable />} />
+          <Route path="/action-crud" element={<ActionCrud />} />
         </Routes>
         
         <Routes>
