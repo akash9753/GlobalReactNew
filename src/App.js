@@ -46,11 +46,11 @@ import Usestate from "./Hooks/Usestate";
 import Useeffect from "./Hooks/Useeffect";
 import Usememo from "./Hooks/Usememo";
 import Usecallback from "./Hooks/Usecallback";
-import ReactTable from "./React-table/ReactTable";
-import SortingTable from "./React-table/SortingTable";
-import Filtering from "./React-table/Filtering";
-import PaginationTable from "./React-table/PaginitionTable";
-import ActionCrud from "./React-table/ActionCrud";
+import ReactTable from "./reactTable/ReactTable";
+import SortingTable from "./reactTable/SortingTable";
+import Filtering from "./reactTable/Filtering";
+import PaginationTable from "./reactTable/PaginitionTable";
+import ActionCrud from "./reactTable/ActionCrud";
 import ReactTableHome from "./ReactTableCrudBootstrap.js/ReactTableHome";
 function App() {
   useEffect(() => {
