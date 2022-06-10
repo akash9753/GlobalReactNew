@@ -23,6 +23,7 @@ const PaginationTable = () => {
 
   
     const [users, setUsers] = useState([])
+    
     const navigate = useNavigate();
 
     const deleteUserById = async (id)=>{
@@ -36,16 +37,24 @@ const PaginationTable = () => {
     navigate("/edituser/"+id)
     
 }
-
+     
+     
      const COLUMNSCrud = [
-      {
-          Header: 'Id',
-          Footer:'Id',
-          accessor:'_id',
-          // Filter: ColumnFilter,
-          disableFilters: true,
-          show:true
-      },
+      
+      // {
+      //     Header: 'Id',
+      //     Footer:'Id',
+      //     accessor:'_id',
+      //     // Filter: ColumnFilter,
+      //     disableFilters: true,
+      //     show:true
+      // },
+      // {
+        
+      //   Header:'No',
+      //   accessor:'no',
+      //   Cell:({row}) => `${no++}`
+      // },
       {
           Header: 'First Name',
           Footer:'First Name',
@@ -87,9 +96,11 @@ const PaginationTable = () => {
           Header: "Action",
           accessor:"actionEdit",
           disableFilters: true,
-          Cell:({row}) => (
+          Cell:({row}) => 
+          (
               // <Button component={Link} to={`/edituser/${row.values._id}`}>Edit</Button>
-              <Button onClick={() => editUserById(row.values._id)}>Edit</Button>
+              <Button onClick={() => editUserById(row.original._id)}>Edit</Button>
+            
           )
       },
       {
@@ -97,7 +108,7 @@ const PaginationTable = () => {
           accessor:"actionDelete",
           disableFilters: true,
           Cell:({row}) => (
-              <Button onClick={() => deleteUserById(row.values._id)}>Delete</Button>
+              <Button onClick={() => deleteUserById(row.original._id)}>Delete</Button>
           )
       },
   ]
@@ -171,7 +182,7 @@ const PaginationTable = () => {
     setGlobalFilter,
     
   } = tableInstance;
-
+   console.log("page from 176 ln",page);
   const { globalFilter, pageIndex, pageSize } = state;
 
   return (
