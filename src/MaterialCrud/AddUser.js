@@ -6,7 +6,7 @@ import classNames from 'classnames';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { useNavigate } from 'react-router-dom'
-import Navbar from './Navbar';
+
 import { addUser } from '../server/Api'
 
 
@@ -24,13 +24,13 @@ function AddUser() {
         toast.success('Information have been saved successfully.');
         console.log(data);
         setTimeout(() => {
-            navigate('/allUsers');
+            navigate('/all-users');
             }, 1000);
     }
 
     return (
         <div className="">
-            <Navbar/>
+           
             <div className='row'>
                 <div className='col-md-4'></div>
                 <div className='col-md-4'>

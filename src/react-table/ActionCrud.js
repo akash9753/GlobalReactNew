@@ -1,6 +1,7 @@
 import React, { useMemo } from "react";
 import { useTable, useGlobalFilter, useFilters, useSortBy, usePagination } from "react-table";
-import { COLUMNSCrud } from "./ColumnCrudAction";
+import { Button } from '@chakra-ui/react'
+// import { COLUMNSCrud } from "./ColumnCrudAction";
 import "./table.css";
 import GlobalFilter from "./GlobalFilter";
 import ColumnFilter from "./ColumnFilter";
@@ -8,7 +9,13 @@ import { FcRight,FcLeft,FcPrevious } from "react-icons/fc";
 import { getUsers } from './Api';
 import { useState } from 'react';
 import { useEffect } from 'react';
+import Navbar from "../ReactTableCrudBootstrap.js/Navbar";
+import { deleteUser } from '../server/Api';
+import {Link} from 'react-router-dom'
+import { useNavigate } from "react-router-dom";
+import { ToastContainer, toast } from "react-toastify";
 import axios from "axios";
+import {getUserData} from "../MaterialCrud/EditUser";
 
 const url = "https://nodejsreact1234.herokuapp.com/user/all"
 
@@ -16,6 +23,84 @@ const PaginationTable = () => {
 
   
     const [users, setUsers] = useState([])
+    const navigate = useNavigate();
+
+    const deleteUserById = async (id)=>{
+      alert("R u sure u want to delete this user")
+      await deleteUser(id);
+      toast.success("user deleted successfully.");
+      getUserDetails();
+  }
+  
+  const editUserById = async (id)=>{
+    navigate("/edituser/"+id)
+    
+}
+
+     const COLUMNSCrud = [
+      {
+          Header: 'Id',
+          Footer:'Id',
+          accessor:'_id',
+          // Filter: ColumnFilter,
+          disableFilters: true,
+          show:true
+      },
+      {
+          Header: 'First Name',
+          Footer:'First Name',
+          accessor:'fname',
+          // Filter: ColumnFilter
+      },
+      {
+          Header: 'Last Name',
+          Footer:'Last Name',
+          accessor:'lname',
+          // Filter: ColumnFilter
+          
+      },
+      {
+          Header: 'Gender',
+          Footer: 'Gender',
+          accessor:'gender',
+          // Filter: ColumnFilter,
+      },
+      {
+          Header: 'Email',
+          Footer: 'Email',
+          accessor:'email',
+          // Filter: ColumnFilter
+      },
+      {
+          Header: 'Mobile',
+          Footer:'Mobile',
+          accessor:'mobile',
+          Cell:({row}) => `91${row.values.mobile}`
+      },
+      {
+          Header: 'State',
+          Footer:'State',
+          accessor:'state',
+          // Filter: ColumnFilter
+      },
+      {
+          Header: "Action",
+          accessor:"actionEdit",
+          disableFilters: true,
+          Cell:({row}) => (
+              // <Button component={Link} to={`/edituser/${row.values._id}`}>Edit</Button>
+              <Button onClick={() => editUserById(row.values._id)}>Edit</Button>
+          )
+      },
+      {
+          Header: "Action",
+          accessor:"actionDelete",
+          disableFilters: true,
+          Cell:({row}) => (
+              <Button onClick={() => deleteUserById(row.values._id)}>Delete</Button>
+          )
+      },
+  ]
 
     // useEffect(()=>{
     //   const fetchUsers = async () => {
@@ -41,6 +126,8 @@ const PaginationTable = () => {
         
     }
 
+    
+
     const columns = useMemo(() => COLUMNSCrud, []);
     const data = useMemo(() => users, [users]);
     console.log("Data",data);
@@ -57,7 +144,7 @@ const PaginationTable = () => {
       columns,
       data,
       defaultColumn,
-      initialState:{pageIndex:0}
+      // initialState:{pageIndex:0,hiddenColumns: [_id]}
     },
     useFilters,
     useGlobalFilter,
@@ -82,12 +169,14 @@ const PaginationTable = () => {
     setPageSize,
     state,
     setGlobalFilter,
+    
   } = tableInstance;
 
   const { globalFilter, pageIndex, pageSize } = state;
 
   return (
     <>
+    <Navbar/>
       <GlobalFilter filter={globalFilter} setFilter={setGlobalFilter} />
       <table {...getTableProps()}>
         <thead>
@@ -97,7 +186,7 @@ const PaginationTable = () => {
                 {headerGroup.headers.map((column) => (
                   <th {...column.getHeaderProps(column.getSortByToggleProps())}>
                     {column.render("Header")}
-                    <div>{column.canFilter ? column.render('Filter') : null}</div>
+                    {/* <div>{column.canFilter ? column.render('Filter') : null}</div> */}
                     <span>
                     
                       {column.isSorted ? (
@@ -180,6 +269,7 @@ const PaginationTable = () => {
           <button style={{marginLeft:"8px"}} className="btn btn-light" onClick={() => previousPage()} disabled={!canPreviousPage}><FcLeft/> </button>
           <button style={{marginLeft:"8px"}} className="btn btn-light" onClick={() =>nextPage()} disabled={!canNextPage}><FcRight/> </button>
           <button style={{marginLeft:"8px"}} className="btn btn-light" onClick={() => gotoPage(pageCount-1)} disabled={!canNextPage}>{'>>'}</button>
+          <ToastContainer />
       </div>
     </>
   );

@@ -37,7 +37,10 @@ const Home = () => {
           <Link to="/pagination-table">Pagination Table</Link>
         </li>
         <li>
-          <Link to="/action-crud">Action Crud</Link>
+          <Link to="/action-crud">Action Crud</Link> 
+        </li>
+        <li>
+          <Link to="/react-table-home">React Table Home</Link>
         </li>
       </ul>
       </div>

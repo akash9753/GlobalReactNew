@@ -12,7 +12,7 @@ const GlobalFilter = ({ filter, setFilter }) => {
   return (
     <div className="App">
       <span>
-        Search:{" "}
+        Global Search:{" "}
         <input style={{marginLeft: 4}} 
           value={filter || ""}
           onChange={(e) => setFilter(e.target.value)}

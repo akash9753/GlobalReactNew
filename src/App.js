@@ -51,6 +51,7 @@ import SortingTable from "./React-table/SortingTable";
 import Filtering from "./React-table/Filtering";
 import PaginationTable from "./React-table/PaginitionTable";
 import ActionCrud from "./React-table/ActionCrud";
+import ReactTableHome from "./ReactTableCrudBootstrap.js/ReactTableHome";
 function App() {
   useEffect(() => {
     document.title = "Global React";
@@ -161,13 +162,22 @@ function App() {
           <Route path="/action-crud" element={<ActionCrud />} />
         </Routes>
         
-        <Routes>
+        {/* <Routes>
           <Route path="/homecrud" element={<HomeCrud />} />
           <Route path="/allusers" element={<AllUsers />} />
           <Route path="/adduser" element={<AddUser />} />
           <Route path="/edituser/:id" element={<EditUser />} />
+          </Routes> */}
+
+          <Routes>
+          <Route path="/react-table-home" element={<ReactTableHome />} />
+          <Route path="/all-users" element={<ActionCrud />} />
+          <Route path="/adduser" element={<AddUser />} />
+          <Route path="/edituser/:id" element={<EditUser />} />
         </Routes>
       </BrowserRouter>
+
+
     </div>
   );
 }

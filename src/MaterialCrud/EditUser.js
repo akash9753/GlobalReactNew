@@ -38,16 +38,16 @@ function EditUser() {
   const getUserData = async () => {
     console.log(id);
     let response = await getUser(id);
-    console.log(response.data.data);
+    console.log("data from id",response.data.data);
     setUser(response.data.data);
   };
-  console.log(user);
+  // console.log("in user 44",user.state);
   // console.log(user.data.fname);
   // console.log(user.data.lname);
   // console.log(user.data.gender);
   // console.log(user.data.email);
   // console.log(user.data.mobile);
-  // console.log(user.data.state);
+  // console.log("50",user.state);
   const {
     register,
     handleSubmit,
@@ -75,13 +75,13 @@ function EditUser() {
     toast.success("Information have been updated successfully.");
     console.log(data);
     setTimeout(() => {
-      navigate("/allUsers");
+      navigate("/all-users");
     }, 1000);
   };
 
   return (
     <div className="">
-      <Navbar/>
+      
       <div className="row">
         <div className="col-md-4"></div>
         <div className="col-md-4">
