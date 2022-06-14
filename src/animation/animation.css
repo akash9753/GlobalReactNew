@@ -1,0 +1,38 @@
+#div1{
+    height: 70px;
+    width: 70px;
+    position: absolute;
+    top: 113px;
+    left: 20%;
+    background-color: aqua;
+    /* transform: rotate(120deg); */
+    /* transform: rotate(-120deg); */
+    /* transform: rotateX(120deg); */
+    /* transform: rotateY(120deg); */
+    /* transform: scale(1.5, 0.4); */
+    /* transform: translate(100px,100px); */
+    /* transition: 1s ease-in-out; */
+    /* transition: 1s steps(4, end); */
+    /* animation: changeShape 1s ease-in-out 2; */
+    /* animation: changeShape 1s ease-in-out infinite; */
+    animation: changeShape 1s ease-in-out infinite alternate;
+    /* animation is a sorthand property */
+}
+/* #div1:hover{
+    transform: scale(1.5) translate(150px);
+} */
+
+@keyframes changeShape{
+    from{
+        border-radius: 0%;
+    }
+    25%{
+        border-radius: 12.5%;
+    }
+    50%{
+        border-radius: 25%;
+    }
+    to{
+        border-radius: 50%;
+    }
+}

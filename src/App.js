@@ -52,6 +52,9 @@ import Filtering from "./reactTable/Filtering";
 import PaginationTable from "./reactTable/PaginitionTable";
 import ActionCrud from "./reactTable/ActionCrud";
 import ReactTableHome from "./ReactTableCrudBootstrap.js/ReactTableHome";
+import Popup from "./popup/Popup";
+import Responsiveness from "./responsiveness/Responsiveness";
+import Animation from "./animation/Animation";
 function App() {
   useEffect(() => {
     document.title = "Global React";
@@ -160,6 +163,9 @@ function App() {
           <Route path="/filter-table" element={<Filtering />} />PaginationTable
           <Route path="/pagination-table" element={<PaginationTable />} />
           <Route path="/action-crud" element={<ActionCrud />} />
+          <Route path="/popup" element={<Popup />} />
+          <Route path="/responsiveness" element={<Responsiveness />} />
+          <Route path="/animation" element={<Animation />} />
         
           {/* <Route path="/homecrud" element={<HomeCrud />} />
           <Route path="/allusers" element={<AllUsers />} /> */}

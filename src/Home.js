@@ -42,6 +42,15 @@ const Home = () => {
         <li>
           <Link to="/react-table-home">React Table Home</Link>
         </li>
+        <li>
+          <Link to="/popup">Custom Popup</Link>
+        </li>
+        <li>
+          <Link to="/responsiveness">Responsiveness</Link>
+        </li>
+        <li>
+          <Link to="/animation">Animation</Link>
+        </li>
       </ul>
       </div>
     </>
